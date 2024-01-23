@@ -12,10 +12,11 @@
   text-align: center;
   justify-content: space-between;
 }
-header {
+nav {
   background-color: var.$White_color;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .search {
