@@ -4,10 +4,7 @@ let Search = "";
 const ProductQuantity = document.querySelector(".products__quantity");
 const Pagination = document.querySelector(".pagination");
 
-
-
 let activePage = 1;
-
 
 function getThisProductCard({
   name,
@@ -76,6 +73,12 @@ function getThisProductCard({
   `;
 }
 
+let result = products.filter((el) => el.discount).slice(-4);
+
+result.map((el) => {
+  itemCardMain.innerHTML += getThisProductCard(el);
+});
+
 function GetProducts() {
   let results = products.filter((pr) => pr.name.toLowerCase().includes(Search));
   let pages = Math.ceil(results.length / LIMIT);
@@ -126,7 +129,6 @@ function getPage(page) {
   }
   GetProducts();
 }
-
 
 // let discountCard = products.filter((product) => product.discount).slice(-4);
 
